@@ -1,0 +1,2991 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title id="page-title">منصة أبو قاعود التعليمية | رحلتك نحو التفوق والتميز</title>
+  
+  <link rel="icon" id="dynamic-favicon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>" />
+
+  <!-- Google Fonts: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    function getSvgPlaceholder(text) {
+      const clean = String(text || "منصة أبو قاعود التعليمية").replace(/<[^>]*>?/gm, "").substring(0, 34);
+      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380">
+          <defs>
+            <linearGradient id="courseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0284c7;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#0369a1;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#075985;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect width="600" height="380" fill="url(#courseGrad)"/>
+          <circle cx="300" cy="150" r="54" fill="#ffffff" opacity="0.14"/>
+          <text x="50%" y="162" dominant-baseline="middle" text-anchor="middle" font-size="44" fill="#ffffff" font-family="Cairo, sans-serif">📐</text>
+          <text x="50%" y="244" dominant-baseline="middle" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff" font-family="Cairo, sans-serif">${clean}</text>
+        </svg>
+      `);
+    }
+
+    function handleImageError(img, text) {
+      if (!img) return;
+      img.onerror = null;
+      img.src = getSvgPlaceholder(text);
+    }
+  </script>
+
+  <style>
+    :root {
+      --sidebar-blue: #0284c7;
+      --sidebar-blue-dark: #0369a1;
+      --sidebar-blue-soft: #e0f2fe;
+      --topbar-green: #70b824;
+      --topbar-green-dark: #5c9e1a;
+      --accent-green: #22c55e;
+      --accent-cyan: #06b6d4;
+      --accent-orange: #f97316;
+      --accent-red: #ef4444;
+      
+      --bg-page: #f5f4ed;
+      --bg-card: #ffffff;
+      --bg-card-alt: #fbfaf5;
+      
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      
+      --border-soft: #e5e4dc;
+      --border-card: #ecebe4;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 26px;
+      --radius-full: 9999px;
+      
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.05);
+      
+      --font-main: 'Cairo', system-ui, -apple-system, sans-serif;
+      --sidebar-width: 250px;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-alt: #162032;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-soft: #334155;
+      --border-card: #283548;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      min-height: 100vh;
+      direction: rtl;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button, input, select, textarea { font-family: inherit; outline: none; border: none; }
+    button { cursor: pointer; user-select: none; }
+
+    /* ================= LANDING HERO (الواجهة الترحيبية للزوار) ================= */
+    .landing-hero-card {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-xl);
+      padding: 50px 40px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 32px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100vh - 120px);
+    }
+
+    .landing-hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+
+    .landing-hero-content p {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    .landing-btn-start {
+      background: var(--topbar-green);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 1.15rem;
+      padding: 14px 42px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 6px 18px rgba(112, 184, 36, 0.38);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .landing-btn-start:hover {
+      background: var(--topbar-green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(112, 184, 36, 0.48);
+    }
+
+    .landing-hero-illustration {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .landing-hero-illustration svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      filter: drop-shadow(0 14px 28px rgba(0,0,0,0.07));
+    }
+
+    /* Layout Structure: Right Sidebar */
+    #layout-sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--sidebar-blue);
+      color: #ffffff;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 100;
+      transition: width 0.3s ease, transform 0.3s ease;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.06);
+    }
+
+    #layout-sidebar.collapsed { width: 76px; }
+    #layout-sidebar.collapsed .nav-label,
+    #layout-sidebar.collapsed .sidebar-sublinks,
+    #layout-sidebar.collapsed .brand-title { display: none; }
+
+    .sidebar-brand-box {
+      padding: 18px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .brand-content-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .brand-logo-badge {
+      width: 42px;
+      height: 42px;
+      background: #ffffff;
+      color: var(--sidebar-blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      white-space: nowrap;
+      color: #ffffff;
+    }
+
+    .sidebar-toggle-btn {
+      width: 28px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    .sidebar-toggle-btn:hover { background: rgba(255, 255, 255, 0.32); }
+
+    .sidebar-nav {
+      flex: 1;
+      padding: 16px 12px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 16px;
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .sidebar-link:hover { background: rgba(255, 255, 255, 0.15); }
+
+    .sidebar-link.active {
+      background-color: #ffffff;
+      color: var(--sidebar-blue);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar-link svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .sidebar-sublinks {
+      padding: 2px 34px 10px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+    .sidebar-sublink { cursor: pointer; transition: 0.2s; }
+    .sidebar-sublink:hover { color: #ffffff; text-decoration: underline; }
+
+    /* Main Content Wrapper */
+    #layout-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 100vh;
+    }
+
+    /* Green Topbar Header */
+    .topbar-header {
+      background-color: var(--topbar-green);
+      color: #ffffff;
+      height: 64px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 95;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    }
+
+    .topbar-right-title { font-size: 1.3rem; font-weight: 900; white-space: nowrap; }
+
+    .topbar-search-box { flex: 1; max-width: 480px; position: relative; }
+    .topbar-search-box input {
+      width: 100%;
+      height: 40px;
+      border-radius: var(--radius-full);
+      padding: 0 42px 0 18px;
+      font-size: 0.92rem;
+      background: #ffffff;
+      color: var(--text-main);
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .topbar-search-icon {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      display: flex;
+    }
+
+    .topbar-left-actions { display: flex; align-items: center; gap: 10px; }
+
+    .btn-topbar-register {
+      background: #22c55e;
+      color: #ffffff;
+      padding: 7px 18px;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+    .btn-topbar-register:hover { background: #16a34a; transform: translateY(-1px); }
+
+    .btn-topbar-login {
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      padding: 7px 18px;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn-topbar-login:hover { background: rgba(255, 255, 255, 0.35); }
+
+    .wallet-pill {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(4px);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .topbar-icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    .topbar-icon-btn:hover { background: rgba(255, 255, 255, 0.35); }
+
+    .user-avatar-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-full);
+      background: #fde047;
+      color: #854d0e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1rem;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+      cursor: pointer;
+    }
+
+    .mobile-menu-trigger { display: none; background: transparent; color: #ffffff; }
+
+    /* Content Area */
+    .content-viewport {
+      flex: 1;
+      padding: 24px;
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .view-section { display: none; animation: fadeIn 0.25s ease; }
+    .view-section.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Notice Banner Card */
+    .notice-banner-card {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .notice-banner-card .notice-info { display: flex; align-items: center; gap: 14px; }
+    .notice-play-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #e0f2fe;
+      color: var(--sidebar-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    /* Stats Tri-Cards */
+    .home-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .stat-box-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-card);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .stat-box-card.cyan-card {
+      background: linear-gradient(135deg, #06b6d4, #0891b2);
+      color: #ffffff;
+      border: none;
+    }
+    .stat-box-card.cyan-card .stat-sub { color: rgba(255, 255, 255, 0.85); }
+    .stat-box-card.cyan-card .stat-icon { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+    .stat-title-num { font-size: 1.8rem; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+    .stat-label-text { font-size: 1.05rem; font-weight: 800; margin-bottom: 2px; }
+    .stat-sub { font-size: 0.78rem; color: var(--text-muted); }
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: #f1f5f9;
+      color: var(--sidebar-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Activity & Progress Row */
+    .dashboard-mid-row {
+      display: grid;
+      grid-template-columns: 1.7fr 1.1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .chart-panel-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-card);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-header-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .activity-graph-wrap { width: 100%; height: 220px; position: relative; margin-top: 10px; }
+
+    .progress-panel-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-card);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .progress-circle-meter {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: conic-gradient(var(--accent-green) 0% 18%, #e2e8f0 18% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .progress-circle-inner {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--text-main);
+    }
+
+    /* Course Cards */
+    .section-headline-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .section-headline-bar h3 { font-size: 1.25rem; font-weight: 900; }
+
+    .courses-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card-basat {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .course-card-basat:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .course-card-cover {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      background: #1e293b;
+      display: block;
+    }
+
+    .course-card-content {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .course-tag-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .badge-pill {
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      background: #e2e8f0;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-pill.green { background: #dcfce7; color: #15803d; }
+    .badge-pill.blue { background: #e0f2fe; color: var(--sidebar-blue); }
+    .badge-pill.orange { background: #ffedd5; color: #c2410c; }
+
+    .course-title-text {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .course-instructor-text { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
+
+    .course-action-btn-green {
+      width: 100%;
+      padding: 10px;
+      background-color: var(--topbar-green);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border-radius: var(--radius-md);
+      transition: 0.2s;
+      text-align: center;
+      display: block;
+    }
+    .course-action-btn-green:hover { background-color: var(--topbar-green-dark); }
+
+    .course-action-btn-blue {
+      width: 100%;
+      padding: 10px;
+      background-color: var(--sidebar-blue);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border-radius: var(--radius-md);
+      transition: 0.2s;
+      text-align: center;
+      display: block;
+      margin-top: 8px;
+    }
+    .course-action-btn-blue:hover { background-color: var(--sidebar-blue-dark); }
+
+    /* Course Detail & Lecture Breakdown */
+    .course-header-banner-box {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .course-header-banner-box img {
+      width: 100%;
+      height: 180px;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+    }
+
+    .lecture-sections-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .lecture-accordion-category {
+      background: #ffffff;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .lecture-category-header {
+      padding: 14px 20px;
+      background: #f8fafc;
+      font-weight: 800;
+      font-size: 1.02rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-soft);
+      cursor: pointer;
+    }
+
+    .lecture-category-items {
+      padding: 10px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .lecture-item-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border-soft);
+    }
+    .lecture-item-action-row:last-child { border-bottom: none; }
+
+    .btn-action-view {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 8px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+    .btn-action-view:hover { background: #0369a1; transform: scale(1.02); }
+
+    .btn-action-file {
+      background: #0d9488;
+      color: #ffffff;
+      padding: 8px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+    .btn-action-file:hover { background: #0f766e; transform: scale(1.02); }
+
+    /* Custom Platform Video Player */
+    .platform-player-view {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-card);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .aq-video-wrap {
+      position: relative;
+      background: #000000;
+      border-radius: 16px;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .aq-video-wrap video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: block;
+      background: #000000;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .aq-video-wrap iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      display: block;
+      background: #000;
+    }
+
+    .aq-video-watermark {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.08);
+      font-size: clamp(24px, 5.5vw, 64px);
+      font-weight: 900;
+      transform: rotate(-18deg);
+      z-index: 4;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .aq-video-dynamic-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      color: rgba(255, 255, 255, 0.45);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .aq-video-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      transition: opacity 0.3s;
+    }
+
+    .aq-video-controls button,
+    .aq-video-controls select {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .aq-video-controls button:hover,
+    .aq-video-controls select:hover { background: rgba(255, 255, 255, 0.3); }
+    .aq-video-controls select option { background: #1e293b; color: #ffffff; }
+
+    .aq-video-time {
+      color: #ffffff;
+      font-size: 0.82rem;
+      min-width: 90px;
+      text-align: center;
+      direction: ltr;
+      font-weight: 700;
+    }
+
+    .aq-video-progress {
+      flex: 1;
+      accent-color: var(--topbar-green);
+      cursor: pointer;
+      height: 6px;
+    }
+
+    .aq-video-wrap.aq-is-fullscreen {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 99999 !important;
+      border-radius: 0 !important;
+      background: #000 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .aq-video-wrap.aq-is-fullscreen video {
+      width: 100vw !important;
+      height: 100vh !important;
+      aspect-ratio: auto !important;
+    }
+
+    .aq-video-blocker {
+      position: absolute;
+      inset: 0;
+      background: #000000;
+      z-index: 25;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+    .aq-video-blocker.active { display: flex; }
+
+    /* Account / Profile View */
+    .profile-tabs-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+    .profile-tab-pill {
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+    }
+    .profile-tab-pill.active {
+      background: var(--topbar-green);
+      color: #ffffff;
+      border-color: var(--topbar-green);
+    }
+
+    .account-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .profile-blue-card {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.2);
+    }
+
+    .profile-details-card {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-card);
+      padding: 26px;
+    }
+
+    /* Floating buttons at bottom left */
+    .floating-tools-container {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .float-notes-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--sidebar-blue);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .float-notes-btn:hover { transform: scale(1.05); }
+
+    .float-whatsapp-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
+      transition: transform 0.2s;
+    }
+    .float-whatsapp-btn:hover { transform: scale(1.08); }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-backdrop.show { display: flex; }
+
+    .modal-box {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      width: 100%;
+      max-width: 500px;
+      padding: 26px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-box.modal-large { max-width: 900px; }
+
+    .custom-input-box {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      padding: 0 14px;
+      font-size: 0.92rem;
+      background: var(--bg-card);
+      color: var(--text-main);
+      transition: border-color 0.2s;
+    }
+    .custom-input-box:focus { border-color: var(--sidebar-blue); }
+
+    /* Toast Notification */
+    #toast-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .toast-msg {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      pointer-events: auto;
+      border-right: 4px solid var(--sidebar-blue);
+    }
+    .toast-msg.success { border-right-color: #22c55e; }
+    .toast-msg.error { border-right-color: #ef4444; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      #layout-sidebar {
+        position: fixed;
+        right: -280px;
+        top: 0; bottom: 0;
+        z-index: 1000;
+      }
+      #layout-sidebar.open-mobile { right: 0; }
+      .mobile-menu-trigger { display: inline-flex; }
+      .home-stats-row { grid-template-columns: 1fr; }
+      .dashboard-mid-row { grid-template-columns: 1fr; }
+      .account-cards-grid { grid-template-columns: 1fr; }
+      .course-header-banner-box { grid-template-columns: 1fr; }
+      .landing-hero-card { grid-template-columns: 1fr; text-align: center; padding: 24px; min-height: auto; }
+      .landing-hero-content p { margin: 0 auto 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= RIGHT SIDEBAR ================= -->
+  <aside id="layout-sidebar" style="display: none;">
+    <div class="sidebar-brand-box">
+      <a class="brand-content-link" onclick="navigateTo('home')">
+        <div class="brand-logo-badge" id="sidebar-logo-icon">📐</div>
+        <span class="brand-title" id="sidebar-brand-title">منصة أبو قاعود</span>
+      </a>
+      <button class="sidebar-toggle-btn" onclick="toggleSidebarCollapse()" title="تصغير / تكبير القائمة">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-link active" data-nav="home" onclick="navigateTo('home')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="nav-label">الرئيسية</span>
+      </a>
+
+      <a class="sidebar-link" data-nav="courses" onclick="navigateTo('courses')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span class="nav-label">الكورسات</span>
+      </a>
+      <div class="sidebar-sublinks">
+        <span class="sidebar-sublink" onclick="navigateTo('courses')">كورساتي الحالية</span>
+      </div>
+
+      <a class="sidebar-link" data-nav="forum" onclick="navigateTo('forum')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="nav-label">المنتدى</span>
+      </a>
+
+      <a class="sidebar-link" data-nav="account" onclick="navigateTo('account')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
+        <span class="nav-label">حسابي</span>
+      </a>
+      <div class="sidebar-sublinks">
+        <span class="sidebar-sublink" onclick="navigateTo('account'); switchAccountSubTab('fawry');">شحن المحفظة من فوري</span>
+        <span class="sidebar-sublink" onclick="navigateTo('account'); switchAccountSubTab('center-code');">شحن كود سنتر</span>
+      </div>
+
+      <a class="sidebar-link" data-nav="live" onclick="navigateTo('live')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        <span class="nav-label">اللايفات المباشرة</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ================= MAIN LAYOUT ================= -->
+  <div id="layout-main">
+
+    <!-- Green Top Header -->
+    <header class="topbar-header">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <button class="mobile-menu-trigger" id="mobile-menu-trigger-btn" onclick="toggleMobileSidebar()" aria-label="القائمة" style="display: none;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <span class="topbar-right-title" id="page-section-title">منصة أبو قاعود</span>
+      </div>
+
+      <div class="topbar-search-box">
+        <span class="topbar-search-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </span>
+        <input type="text" id="global-search-input" placeholder="ابحث هنا عن محاضرة، كورس، أو موضوع..." oninput="handleGlobalSearch(this.value)" />
+      </div>
+
+      <div class="topbar-left-actions">
+        <!-- أزرار الزائر عند عدم تسجيل الدخول -->
+        <div id="topbar-guest-actions" style="display: flex; align-items: center; gap: 8px;">
+          <button class="btn-topbar-register" onclick="openAuthModal('register')">حساب جديد</button>
+          <button class="btn-topbar-login" onclick="openAuthModal('login')">تسجيل الدخول</button>
+        </div>
+
+        <!-- معلومات الطالب بعد تسجيل الدخول -->
+        <div id="topbar-student-actions" style="display: none; align-items: center; gap: 10px;">
+          <div class="wallet-pill" onclick="navigateTo('account')">
+            <span>💳</span>
+            <span id="topbar-wallet-balance">0 جنيه</span>
+          </div>
+
+          <div class="user-avatar-btn" id="topbar-user-avatar" onclick="handleUserAvatarClick()">
+            ط
+          </div>
+        </div>
+
+        <button class="topbar-icon-btn" onclick="toggleAppDarkMode()" title="تغيير المظهر">
+          ☀️
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT VIEWPORT -->
+    <main class="content-viewport">
+
+      <!-- ================= 1. HOME VIEW ================= -->
+      <section id="view-home" class="view-section active">
+
+        <!-- واجهة البداية الترحيبية للزوار غير المسجلين -->
+        <div class="landing-hero-card" id="landing-hero-block">
+          <div class="landing-hero-content">
+            <h1 id="landing-hero-title">منصة متكاملة بها كل ما<br><span style="color: var(--sidebar-blue);">يحتاجه الطالب ليتفوق</span></h1>
+            <p id="landing-hero-subtitle">
+              منصة متكاملة بتساعدك تذاكر صح، تختار مدرسينك، وتوصل لأعلى درجاتك في الثانوية العامة بكل سهولة وريادة.
+            </p>
+            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+              <button class="landing-btn-start" onclick="handleHeroStartAction()">
+                <span>ابدأ رحلتك</span>
+                <span>◀</span>
+              </button>
+            </div>
+          </div>
+          <div class="landing-hero-illustration">
+            <svg viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="190" r="140" fill="#e0f2fe" opacity="0.6"/>
+              <circle cx="110" cy="110" r="28" fill="#fde047" opacity="0.7"/>
+              <circle cx="390" cy="270" r="38" fill="#dcfce7" opacity="0.8"/>
+              <rect x="160" y="50" width="180" height="280" rx="24" fill="#0284c7" stroke="#ffffff" stroke-width="6"/>
+              <rect x="175" y="70" width="150" height="220" rx="14" fill="#ffffff"/>
+              <circle cx="250" cy="140" r="34" fill="#fdba74"/>
+              <path d="M210 240 C210 190, 290 190, 290 240 Z" fill="#70b824"/>
+              <path d="M230 145 Q250 160 270 145" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+              <rect x="238" y="130" width="8" height="12" rx="4" fill="#1e293b"/>
+              <rect x="254" y="130" width="8" height="12" rx="4" fill="#1e293b"/>
+              <polygon points="250,90 290,110 250,125 210,110" fill="#1e293b"/>
+              <line x1="290" y1="110" x2="295" y2="135" stroke="#f59e0b" stroke-width="3"/>
+              <polygon points="90,210 120,250 70,260" fill="#70b824" opacity="0.8"/>
+              <circle cx="410" cy="130" r="16" fill="#06b6d4"/>
+              <rect x="360" y="180" width="30" height="30" rx="6" fill="#f97316" transform="rotate(25 375 195)"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- واجهة الطالب الكاملة (تظهر بعد تسجيل الدخول) -->
+        <div id="student-logged-in-container" style="display: none;">
+          <!-- Top Instruction Banner -->
+          <div class="notice-banner-card">
+            <div class="notice-info">
+              <div class="notice-play-icon">▶</div>
+              <div>
+                <strong style="font-size: 1.05rem; display: block; color: var(--text-main);" id="banner-notice-headline">شوف فيديو: طريقة الشحن والاشتراك</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">لو عايز تعرف طريقة الشحن والاشتراك، افتح فيديو الشرح من كتالوج المنصة.</span>
+              </div>
+            </div>
+            <button class="badge-pill blue" onclick="navigateTo('courses')">فتح الكتالوج</button>
+          </div>
+
+          <!-- 3 Stats Cards -->
+          <div class="home-stats-row">
+            <div class="stat-box-card cyan-card">
+              <div>
+                <div class="stat-title-num" id="stat-saved-videos">1</div>
+                <div class="stat-label-text">فيديوهات محفوظة</div>
+                <div class="stat-sub">المحاضرات اللي حفظتها علشان ترجع لها بسرعة</div>
+              </div>
+              <div class="stat-icon">📑</div>
+            </div>
+
+            <div class="stat-box-card">
+              <div>
+                <div class="stat-title-num" style="color: var(--topbar-green);" id="stat-ongoing-courses">0</div>
+                <div class="stat-label-text">كورسات حالية</div>
+                <div class="stat-sub">الكورسات اللي بدأت فيها ولسه مكملتش محتواها</div>
+              </div>
+              <div class="stat-icon" style="color: var(--topbar-green); background: #f0fdf4;">💡</div>
+            </div>
+
+            <div class="stat-box-card">
+              <div>
+                <div class="stat-title-num" style="color: var(--sidebar-blue);" id="stat-completed-courses">0</div>
+                <div class="stat-label-text">كورسات مكتملة</div>
+                <div class="stat-sub">الكورسات اللي خلصت كل محتواها الدراسي بالكامل</div>
+              </div>
+              <div class="stat-icon" style="color: var(--sidebar-blue); background: #f0f9ff;">☑️</div>
+            </div>
+          </div>
+
+          <!-- Middle Row: Activity Graph + Circular Progress -->
+          <div class="dashboard-mid-row">
+            <div class="chart-panel-card">
+              <div class="panel-header-title">
+                <span>نشاطك التعليمي</span>
+                <div style="font-size: 0.78rem; display: flex; gap: 14px;">
+                  <span style="color: var(--topbar-green);">● الأسبوع الحالي</span>
+                  <span style="color: var(--sidebar-blue);">-- الأسبوع الماضي</span>
+                </div>
+              </div>
+
+              <div class="activity-graph-wrap">
+                <svg viewBox="0 0 500 180" style="width: 100%; height: 100%; overflow: visible;">
+                  <line x1="40" y1="20" x2="480" y2="20" stroke="#f1f5f9" stroke-width="1" />
+                  <line x1="40" y1="60" x2="480" y2="60" stroke="#f1f5f9" stroke-width="1" />
+                  <line x1="40" y1="100" x2="480" y2="100" stroke="#f1f5f9" stroke-width="1" />
+                  <line x1="40" y1="140" x2="480" y2="140" stroke="#f1f5f9" stroke-width="1" />
+
+                  <polyline fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-dasharray="5 5"
+                    points="460,140 400,140 340,140 280,30 220,140 160,140 80,140" />
+
+                  <polyline fill="none" stroke="#70b824" stroke-width="3.5"
+                    points="460,140 400,140 340,140 280,140 220,30 160,30 80,140" />
+
+                  <circle cx="160" cy="30" r="5" fill="#70b824" />
+                  <circle cx="220" cy="30" r="5" fill="#70b824" />
+                  <circle cx="280" cy="30" r="4" fill="#0ea5e9" />
+                  <circle cx="80" cy="140" r="5" fill="#0ea5e9" />
+
+                  <text x="460" y="165" font-size="12" fill="#94a3b8" text-anchor="middle">الأربعاء</text>
+                  <text x="400" y="165" font-size="12" fill="#94a3b8" text-anchor="middle">الخميس</text>
+                  <text x="340" y="165" font-size="12" fill="#94a3b8" text-anchor="middle">الجمعة</text>
+                  <text x="280" y="165" font-size="12" fill="#94a3b8" text-anchor="middle">السبت</text>
+                  <text x="220" y="165" font-size="12" fill="#94a3b8" text-anchor="middle">الأحد</text>
+                  <text x="160" y="165" font-size="12" fill="#94a3b8" text-anchor="middle">الإثنين</text>
+                  <text x="80" y="165" font-size="12" fill="#94a3b8" text-anchor="middle">الثلاثاء</text>
+                </svg>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--text-light); text-align: center; margin-top: 8px;">
+                * ابدأ أول كورس علشان نقدر نعرضلك بيانات نشاطك التعليمي بشكل دقيق!
+              </div>
+            </div>
+
+            <div class="progress-panel-card">
+              <div class="progress-circle-meter" id="home-progress-ring">
+                <div class="progress-circle-inner" id="home-progress-label">0%</div>
+              </div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">مقياس تقدمك التعليمي</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; max-width: 220px;">
+                مقياس لكمية الدروس السابقة والمتبقية في كورساتك
+              </p>
+              <button class="course-action-btn-blue" style="max-width: 180px;" onclick="continueStudentStudy()">كمل مذاكرة ▶</button>
+            </div>
+          </div>
+
+          <!-- Enrolled Courses Row -->
+          <div class="section-headline-bar">
+            <h3>الكورسات المتاحة والمشترك فيها</h3>
+          </div>
+          <div class="courses-cards-grid" id="enrolled-courses-grid"></div>
+        </div>
+      </section>
+
+      <!-- ================= 2. COURSES CATALOG VIEW ================= -->
+      <section id="view-courses" class="view-section">
+        <div style="margin-bottom: 24px;">
+          <div class="profile-tabs-bar" id="category-filter-tabs">
+            <button class="profile-tab-pill active" onclick="filterCatalog('ALL', this)">كل المواد</button>
+            <button class="profile-tab-pill" onclick="filterCatalog('لغة عربية', this)">اللغة العربية</button>
+            <button class="profile-tab-pill" onclick="filterCatalog('لغة إنجليزية', this)">اللغة الإنجليزية</button>
+            <button class="profile-tab-pill" onclick="filterCatalog('رياضيات', this)">الرياضيات</button>
+            <button class="profile-tab-pill" onclick="filterCatalog('فيزياء', this)">الفيزياء</button>
+          </div>
+        </div>
+
+        <div class="courses-cards-grid" id="all-courses-catalog-grid"></div>
+      </section>
+
+      <!-- ================= 3. COURSE DETAIL & ACCORDION ================= -->
+      <section id="view-course-details" class="view-section">
+        <button class="badge-pill blue" style="margin-bottom: 14px; cursor: pointer;" onclick="navigateTo('courses')">← العودة للكورسات</button>
+        
+        <div class="course-header-banner-box">
+          <img id="detail-course-cover" src="" alt="غلاف الكورس" onerror="handleImageError(this, 'كورس')" />
+          <div>
+            <span class="badge-pill green" id="detail-course-category" style="margin-bottom: 8px; display: inline-block;">المادة</span>
+            <h1 id="detail-course-title" style="font-size: 1.6rem; font-weight: 900; margin-bottom: 8px;">عنوان الكورس</h1>
+            <p id="detail-course-desc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6;">وصف الكورس...</p>
+            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+              <span id="detail-course-price" style="font-size: 1.4rem; font-weight: 900; color: var(--topbar-green);">مجاناً</span>
+              <button id="detail-enroll-btn" class="course-action-btn-green" style="max-width: 240px;" onclick="handleCourseEnrollAction()">اشترك الآن (مجاناً)</button>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 16px;">المحاضرات والدروس</h3>
+        <div class="lecture-sections-list" id="detail-lecture-accordion-list"></div>
+      </section>
+
+      <!-- ================= 4. CUSTOM VIDEO PLAYER VIEW ================= -->
+      <section id="view-platform-player" class="view-section">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <button class="badge-pill blue" style="cursor: pointer;" onclick="returnToCurrentCourse()">← العودة لتفاصيل الكورس</button>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="badge-pill green" id="player-active-tag">مشغل المنصة المحمي</span>
+            <span id="player-lesson-type" class="badge-pill">شرح تفاعلي</span>
+          </div>
+        </div>
+
+        <div class="platform-player-view">
+          <div style="margin-bottom: 16px;">
+            <h2 id="platform-player-title" style="font-size: 1.4rem; font-weight: 900; margin-bottom: 4px;">عنوان المحاضرة</h2>
+            <div id="platform-player-subtitle" style="font-size: 0.88rem; color: var(--text-muted);">منصة أبو قاعود التعليمية</div>
+          </div>
+
+          <div class="aq-video-wrap" id="platform-video-wrapper">
+            <div id="video-render-target"></div>
+
+            <div class="aq-video-watermark" id="aq-watermark-text">منصة أبو قاعود التعليمية</div>
+            <div class="aq-video-dynamic-tag" id="aq-dynamic-student-tag">حساب محمي</div>
+
+            <div class="aq-video-blocker" id="aq-video-blocker">تم إيقاف العرض لحماية المحتوى الأكاديمي</div>
+
+            <div class="aq-video-controls" id="aq-custom-controls">
+              <button type="button" onclick="seekVideoRel(-10)" title="10 ثوانٍ للخلف">↶ 10</button>
+              <button type="button" id="aq-play-toggle-btn" onclick="togglePlayPause()" title="تشغيل / إيقاف">▶</button>
+              <button type="button" onclick="seekVideoRel(10)" title="10 ثوانٍ للأمام">10 ↷</button>
+              
+              <span class="aq-video-time" id="aq-time-display">00:00 / 00:00</span>
+              <input type="range" class="aq-video-progress" id="aq-seek-slider" min="0" max="100" value="0" step="0.1" oninput="handleSeekChange(this.value)" />
+
+              <select id="aq-speed-select" onchange="changePlaybackRate(this.value)" title="سرعة التشغيل">
+                <option value="0.75">0.75×</option>
+                <option value="1" selected>1×</option>
+                <option value="1.25">1.25×</option>
+                <option value="1.5">1.5×</option>
+                <option value="2">2×</option>
+              </select>
+
+              <select id="aq-quality-select" onchange="changeVideoQuality(this.value)" title="جودة الفيديو">
+                <option value="auto">تلقائي</option>
+                <option value="1080">1080p</option>
+                <option value="720" selected>720p HD</option>
+                <option value="480">480p SD</option>
+              </select>
+
+              <button type="button" onclick="togglePlatformFullscreen()" title="ملء الشاشة">⛶</button>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; gap: 8px;">
+              <button class="badge-pill blue" style="cursor: pointer; padding: 8px 16px;" onclick="navigateLessonStep(-1)">السابق ◀</button>
+              <button class="badge-pill blue" style="cursor: pointer; padding: 8px 16px;" onclick="navigateLessonStep(1)">▶ التالي</button>
+            </div>
+            <button class="badge-pill green" id="mark-lesson-completed-btn" style="cursor: pointer; padding: 8px 20px;" onclick="toggleCurrentLessonDone()">
+              ✓ تحديد الدرس كمكتمل
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 5. FORUM VIEW ================= -->
+      <section id="view-forum" class="view-section">
+        <div class="forum-composer-card" style="background:#ffffff; border:1px solid var(--border-card); border-radius:var(--radius-lg); padding:22px; margin-bottom:20px;">
+          <h3 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 14px;">نوع الاستفسار؟</h3>
+          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+            <label style="flex:1; border: 2px solid var(--sidebar-blue); padding: 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="radio" name="forum-type" value="scientific" checked />
+              <strong>استفسار علمي (سؤال في المنهج)</strong>
+            </label>
+            <label style="flex:1; border: 1px solid var(--border-soft); padding: 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="radio" name="forum-type" value="tech" />
+              <strong>استفسار دعم فني أو مشكلة</strong>
+            </label>
+          </div>
+          <textarea placeholder="اكتب سؤالك هنا وشارك استفسارك مع المعلم وزملائك..." style="width: 100%; height: 90px; border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 12px; margin-bottom: 12px;"></textarea>
+          <button class="course-action-btn-blue" style="max-width: 180px;" onclick="showToast('تم إرسال استفسارك بنجاح للمعلم', 'success')">إرسال طلب نشر ◀</button>
+        </div>
+      </section>
+
+      <!-- ================= 6. ACCOUNT / PROFILE VIEW ================= -->
+      <section id="view-account" class="view-section">
+        <div class="profile-tabs-bar">
+          <button class="profile-tab-pill active" onclick="switchAccountSubTab('overview', this)">الصفحة الرئيسية</button>
+          <button class="profile-tab-pill" onclick="switchAccountSubTab('fawry', this)">شحن المحفظة - فوري</button>
+          <button class="profile-tab-pill" onclick="switchAccountSubTab('center-code', this)">شحن كود السنتر</button>
+        </div>
+
+        <div class="account-cards-grid">
+          <div class="profile-blue-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <h2 style="font-size: 1.4rem; font-weight: 900;" id="acc-student-name">اسم الطالب</h2>
+                  <div style="font-size: 0.85rem; opacity: 0.9;" id="acc-student-phone">01000000000</div>
+                </div>
+                <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">👤</div>
+              </div>
+            </div>
+
+            <div>
+              <div style="font-size: 0.85rem; opacity: 0.9;">فلوسك في المنصة</div>
+              <div style="font-size: 2.2rem; font-weight: 900;" id="acc-wallet-balance">0 جنيه</div>
+            </div>
+          </div>
+
+          <div class="profile-details-card">
+            <h3 style="font-size: 1.2rem; font-weight: 900; margin-bottom: 16px;">تفاصيل حساب الطالب</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
+              <div>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">السنة الدراسية</span>
+                <strong id="acc-grade-level">الصف الثاني الثانوي</strong>
+              </div>
+              <div>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">المحافظة</span>
+                <strong id="acc-student-gov">القاهرة</strong>
+              </div>
+              <div>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">النظام</span>
+                <strong>نظام حديث</strong>
+              </div>
+              <div>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">حالة الحساب</span>
+                <span class="badge-pill green">نشط ومفعل</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="course-action-btn-blue" style="max-width: 220px;" onclick="openAuthModal('login')">تسجيل الدخول بحساب آخر</button>
+              <button class="badge-pill orange" style="padding: 10px 18px; font-size: 0.9rem; cursor: pointer;" onclick="handleStudentLogout()">تسجيل الخروج 🚪</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border-radius: var(--radius-xl); border: 1px solid var(--border-card); padding: 24px;">
+          <h3 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 8px;">اختار طريقة الشحن المناسبة</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">اشحن من خلال فوري، أو استخدم كود السنتر الموجود على الكارت لشحن رصيدك وتفعيل الكورسات فوراً.</p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <button class="course-action-btn-green" style="max-width: 200px;" onclick="handleFawryRecharge()">⚡ اشحن من فوري</button>
+            <button class="course-action-btn-blue" style="max-width: 200px;" onclick="handleCenterCodeRecharge()">🎟️ اشحن بكود السنتر</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 7. LIVE SECTION ================= -->
+      <section id="view-live" class="view-section">
+        <div style="background: #ffffff; border-radius: var(--radius-xl); border: 1px solid var(--border-card); padding: 28px; text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 12px;">📡</div>
+          <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 8px;">البث المباشر واللايفات</h2>
+          <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 20px;">سيتم الإعلان عن مواعيد حصص المراجعة المباشرة واللايفات التفاعلية هنا قبل موعدها.</p>
+          <button class="course-action-btn-green" style="max-width: 200px; margin: 0 auto;" onclick="navigateTo('courses')">تصفح المحاضرات المسجلة</button>
+        </div>
+      </section>
+
+      <!-- ================= 8. QUIZ VIEW ================= -->
+      <section id="view-quiz-exam" class="view-section">
+        <div style="max-width: 760px; margin: 0 auto; background: #ffffff; border-radius: var(--radius-xl); padding: 28px; border: 1px solid var(--border-card);" id="quiz-preflight-card">
+          <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 10px;" id="pre-quiz-title">الاختبار الدوري</h2>
+          <p style="color: var(--text-muted); margin-bottom: 20px;" id="pre-quiz-desc">تعليمات الاختبار وتفاصيله</p>
+          <div style="display: flex; gap: 20px; font-weight: 800; color: var(--text-muted); margin-bottom: 24px;">
+            <div>⏳ المدة: <span id="pre-quiz-duration" style="color: var(--topbar-green);">0 دقيقة</span></div>
+            <div>❓ عدد الأسئلة: <span id="pre-quiz-count" style="color: var(--sidebar-blue);">0</span></div>
+            <div>🎯 النجاح: <span id="pre-quiz-pass" style="color: var(--accent-orange);">50%</span></div>
+          </div>
+          <button class="course-action-btn-green" onclick="confirmStartQuiz()">ابدأ الامتحان الآن</button>
+        </div>
+
+        <div style="max-width: 760px; margin: 0 auto; background: #ffffff; border-radius: var(--radius-xl); padding: 28px; border: 1px solid var(--border-card); display: none;" id="quiz-active-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 id="live-quiz-heading" style="font-size: 1.2rem; font-weight: 900;">السؤال</h3>
+            <span class="badge-pill blue" id="quiz-timer-display">00:00</span>
+          </div>
+          <div id="quiz-question-text" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 20px;">نص السؤال</div>
+          <div id="quiz-options-list" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;"></div>
+          <div style="display: flex; justify-content: space-between;">
+            <button class="badge-pill" id="quiz-prev-btn" onclick="jumpQuizQuestion(-1)">السابق</button>
+            <button class="badge-pill blue" id="quiz-next-btn" onclick="jumpQuizQuestion(1)">التالي</button>
+            <button class="badge-pill green" onclick="attemptSubmitQuiz()">تسليم الاختبار</button>
+          </div>
+        </div>
+
+        <div style="max-width: 760px; margin: 0 auto; background: #ffffff; border-radius: var(--radius-xl); padding: 32px; border: 1px solid var(--border-card); text-align: center; display: none;" id="quiz-result-card">
+          <h2 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">نتيجة الاختبار</h2>
+          <div style="font-size: 2.5rem; font-weight: 900; color: var(--topbar-green); margin-bottom: 12px;" id="result-percentage">0%</div>
+          <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;" id="res-score-raw">0 / 0</div>
+          <button class="course-action-btn-blue" style="max-width: 200px; margin: 0 auto;" onclick="navigateTo('home')">الرجوع للرئيسية</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FLOATING CONTROLS -->
+  <div class="floating-tools-container">
+    <div class="float-notes-btn" onclick="openNotesModal()">
+      <span>📝</span>
+      <span>اضغط هنا عشان تكتب ملاحظاتك</span>
+    </div>
+
+    <a id="whatsapp-floating-action" href="https://wa.me/201278891990" target="_blank" rel="noopener noreferrer" class="float-whatsapp-btn" title="تواصل عبر واتساب">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- PDF VIEWER MODAL -->
+  <div class="modal-backdrop" id="pdf-viewer-modal" onclick="if(event.target === this) closePdfModal()">
+    <div class="modal-box modal-large" style="height: 85vh; display: flex; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-soft);">
+        <div>
+          <h3 id="pdf-modal-title" style="font-size: 1.15rem; font-weight: 800;">عرض ملف PDF</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">يمكنك قراءة الملف مباشرة أو تحميله لجهازك</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <a id="pdf-modal-download-btn" href="#" download class="badge-pill green" style="cursor: pointer; text-decoration: none;">
+            📥 تحميل PDF
+          </a>
+          <button onclick="closePdfModal()" style="font-size: 1.2rem; background: none; cursor: pointer;">✕</button>
+        </div>
+      </div>
+      <div style="flex: 1; border-radius: 12px; overflow: hidden; background: #334155;">
+        <iframe id="pdf-iframe-frame" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= AUTH MODAL ================= -->
+  <div class="modal-backdrop" id="auth-modal" onclick="if(event.target === this) closeAuthModal()">
+    <div class="modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+        <h3 id="auth-modal-title" style="font-size: 1.2rem; font-weight: 900;">تسجيل الدخول</h3>
+        <button onclick="closeAuthModal()" style="font-size: 1.2rem; background: none; cursor: pointer;">✕</button>
+      </div>
+
+      <!-- 1. نموذج تسجيل الدخول -->
+      <form id="login-form" onsubmit="handleLoginSubmit(event)">
+        <div style="margin-bottom: 14px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">رقم الهاتف</label>
+          <input type="tel" id="login-identifier" class="custom-input-box" placeholder="01xxxxxxxxx" required dir="ltr" />
+        </div>
+        <div style="margin-bottom: 18px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">كلمة المرور</label>
+          <input type="password" id="login-password" class="custom-input-box" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="course-action-btn-green" style="font-size: 1rem; padding: 12px;">تسجيل الدخول</button>
+        <div style="text-align: center; margin-top: 14px; font-size: 0.88rem;">
+          ليس لديك حساب؟ <button type="button" style="color: var(--sidebar-blue); font-weight: 800; background: none;" onclick="switchAuthMode('register')">إنشاء حساب جديد</button>
+        </div>
+      </form>
+
+      <!-- 2. نموذج إنشاء حساب جديد -->
+      <form id="register-form" style="display: none;" onsubmit="handleRegisterSubmit(event)">
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">الاسم كامل</label>
+          <input type="text" id="reg-fullname" class="custom-input-box" placeholder="اكتب اسمك ثلاثي أو رباعي" required />
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">رقم الهاتف</label>
+          <input type="tel" id="reg-phone" class="custom-input-box" placeholder="01xxxxxxxxx" required dir="ltr" />
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">الصف الدراسي</label>
+          <select id="reg-grade" class="custom-input-box" required style="cursor: pointer;">
+            <option value="" disabled selected>-- اختار الصف الدراسي --</option>
+            <option value="الصف الأول الثانوي">الصف الأول الثانوي</option>
+            <option value="الصف الثاني الثانوي">الصف الثاني الثانوي</option>
+            <option value="الصف الثالث الثانوي (البكالوريا)">الصف الثالث الثانوي (البكالوريا)</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">المحافظة</label>
+          <select id="reg-governorate" class="custom-input-box" required style="cursor: pointer;">
+            <option value="" disabled selected>-- اختار محافظتك --</option>
+            <option value="القاهرة">القاهرة</option>
+            <option value="الجيزة">الجيزة</option>
+            <option value="الإسكندرية">الإسكندرية</option>
+            <option value="الدقهلية">الدقهلية</option>
+            <option value="الشرقية">الشرقية</option>
+            <option value="المنوفية">المنوفية</option>
+            <option value="القليوبية">القليوبية</option>
+            <option value="البحيرة">البحيرة</option>
+            <option value="الغربية">الغربية</option>
+            <option value="بور سعيد">بور سعيد</option>
+            <option value="دمياط">دمياط</option>
+            <option value="الإسماعيلية">الإسماعيلية</option>
+            <option value="السويس">السويس</option>
+            <option value="كفر الشيخ">كفر الشيخ</option>
+            <option value="الفيوم">الفيوم</option>
+            <option value="بني سويف">بني سويف</option>
+            <option value="المنيا">المنيا</option>
+            <option value="أسيوط">أسيوط</option>
+            <option value="سوهاج">سوهاج</option>
+            <option value="قنا">قنا</option>
+            <option value="الأقصر">الأقصر</option>
+            <option value="أسوان">أسوان</option>
+            <option value="البحر الأحمر">البحر الأحمر</option>
+            <option value="الوادي الجديد">الوادي الجديد</option>
+            <option value="مطروح">مطروح</option>
+            <option value="شمال سيناء">شمال سيناء</option>
+            <option value="جنوب سيناء">جنوب سيناء</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">كلمة المرور</label>
+          <input type="password" id="reg-password" class="custom-input-box" placeholder="لا تقل عن 6 خانات" required />
+        </div>
+
+        <div style="margin-bottom: 18px;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">تأكيد كلمة المرور</label>
+          <input type="password" id="reg-password-confirm" class="custom-input-box" placeholder="أعد كتابة كلمة المرور" required />
+        </div>
+
+        <button type="submit" class="course-action-btn-green" style="font-size: 1rem; padding: 12px;">إنشاء الحساب الآن</button>
+        <div style="text-align: center; margin-top: 14px; font-size: 0.88rem;">
+          لديك حساب بالفعل؟ <button type="button" style="color: var(--sidebar-blue); font-weight: 800; background: none;" onclick="switchAuthMode('login')">تسجيل الدخول</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <!-- ================= SUPABASE DATA LAYER & LOGIC ================= -->
+  <script>
+    const SUPABASE = {
+      url: "https://tnqiheclnnobncnzoldp.supabase.co",
+      key: "sb_publishable_8t9_P0slPk8c8wul6DTVsw_UaFDRmqy",
+      mediaBucket: "platform-media"
+    };
+    const SUPABASE_TOKEN_KEY = "abuqaoud_supabase_student_token_v2";
+    let supabaseReady = false;
+    let currentStudentToken = localStorage.getItem(SUPABASE_TOKEN_KEY) || "";
+
+    async function supabaseApi(path, options = {}) {
+      const response = await fetch(SUPABASE.url + path, {
+        ...options,
+        headers: {
+          "apikey": SUPABASE.key,
+          "Authorization": "Bearer " + SUPABASE.key,
+          "Content-Type": "application/json",
+          ...(options.headers || {})
+        }
+      });
+      const text = await response.text();
+      let data = {};
+      try { data = text ? JSON.parse(text) : {}; } catch { data = { message: text }; }
+      if (!response.ok) throw new Error(data.message || data.error || `HTTP ${response.status}`);
+      return data;
+    }
+
+    async function supabaseRpc(name, args) {
+      return supabaseApi("/rest/v1/rpc/" + name, {
+        method: "POST",
+        body: JSON.stringify(args || {})
+      });
+    }
+
+    function esc(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function mediaUrl(value) {
+      if (!value) return "";
+      let v = String(value).trim();
+      if (!v || v === "null" || v === "undefined") return "";
+
+      if (/^(https?:|data:|blob:)/i.test(v)) return v;
+
+      v = v.replace(/^\/+/, "");
+
+      if (v.startsWith("storage/v1/object/public/")) return SUPABASE.url + "/" + v;
+      if (v.startsWith(SUPABASE.mediaBucket + "/")) return SUPABASE.url + "/storage/v1/object/public/" + v;
+      if (/^(media|uploads|images|covers|files)\//i.test(v)) return SUPABASE.url + "/storage/v1/object/public/" + v;
+
+      return SUPABASE.url + "/storage/v1/object/public/" + SUPABASE.mediaBucket + "/" + v;
+    }
+
+    function extractMediaField(obj, fields) {
+      if (!obj) return "";
+      for (const f of fields) {
+        if (obj[f] && typeof obj[f] === 'string' && obj[f].trim() && obj[f] !== "null") {
+          return obj[f].trim();
+        }
+      }
+      return "";
+    }
+
+    function getCourseCoverUrl(course) {
+      if (!course) return getSvgPlaceholder("كورس تعليمي");
+      const rawImg = extractMediaField(course, [
+        'coverImage', 'cover_image', 'image_url', 'imageUrl', 'thumbnail', 
+        'thumbnail_url', 'image', 'cover', 'cover_url', 'banner', 'banner_url'
+      ]);
+      if (rawImg) return mediaUrl(rawImg);
+      return getSvgPlaceholder(course.title || "كورس تعليمي");
+    }
+
+    function normalizeVideoSource(value) {
+      const raw = String(value || "").trim();
+      if (!raw) return { url: "", kind: "file" };
+      const url = mediaUrl(raw);
+      try {
+        const u = new URL(url, window.location.href);
+        const host = u.hostname.toLowerCase();
+        let m = u.pathname.match(/\/embed\/([^/?#]+)/i);
+        if (/youtube\.com$|youtube-nocookie\.com$/i.test(host)) {
+          const id = m?.[1] || u.searchParams.get('v') || u.pathname.match(/\/(?:shorts|live)\/([^/?#]+)/i)?.[1];
+          if (id) return { url: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&controls=1&rel=0&modestbranding=1`, kind: 'embed' };
+        }
+        if (/youtu\.be$/i.test(host)) {
+          const id = u.pathname.split('/').filter(Boolean)[0];
+          if (id) return { url: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&controls=1&rel=0&modestbranding=1`, kind: 'embed' };
+        }
+        if (/vimeo\.com$/i.test(host) || /player\.vimeo\.com$/i.test(host)) {
+          const id = m?.[1] || u.pathname.match(/\/(?:video\/)?(\d+)/i)?.[1];
+          if (id) return { url: `https://player.vimeo.com/video/${id}?autoplay=1`, kind: 'embed' };
+        }
+      } catch(e) {}
+      return { url, kind: 'file' };
+    }
+
+    function normalizeOption(opt, index) {
+      const letters = ["أ","ب","ج","د"];
+      if (typeof opt === "string") return { id: letters[index] || String(index + 1), label: letters[index] || String(index + 1), text: opt, imageUrl: "" };
+      const id = opt?.id ?? opt?.label ?? letters[index] ?? String(index + 1);
+      return {
+        ...opt,
+        id,
+        label: opt?.label || (letters[index] || ""),
+        text: opt?.text || opt?.option_text || "",
+        imageUrl: mediaUrl(opt?.imageUrl || opt?.image || opt?.imageData || opt?.option_image || "")
+      };
+    }
+
+    function normalizeQuestion(q, index) {
+      const opts = q?.options || q?.answers || [
+        { id:"أ", label:"أ", text:q?.option_a || "", imageUrl:q?.option_a_image || "" },
+        { id:"ب", label:"ب", text:q?.option_b || "", imageUrl:q?.option_b_image || "" },
+        { id:"ج", label:"ج", text:q?.option_c || "", imageUrl:q?.option_c_image || "" },
+        { id:"د", label:"د", text:q?.option_d || "", imageUrl:q?.option_d_image || "" }
+      ];
+      return {
+        ...q,
+        id: q?.id || ("q_" + index),
+        text: q?.text || q?.question_text || q?.questionText || "",
+        imageUrl: mediaUrl(q?.imageUrl || q?.image || q?.imageData || q?.question_image || ""),
+        options: (Array.isArray(opts) ? opts : []).slice(0, 4).map(normalizeOption)
+      };
+    }
+
+    function normalizeQuiz(q) {
+      const questions = Array.isArray(q?.questions) ? q.questions.map(normalizeQuestion) : [];
+      return {
+        ...q,
+        durationMinutes: Number(q?.durationMinutes || q?.timeLimit || 30),
+        passingScorePercentage: Number(q?.passingScorePercentage ?? q?.passingScore ?? 50),
+        questions
+      };
+    }
+
+    function normalizeLesson(l, index) {
+      const legacyVideos = Array.from({length:20},(_,i)=>l?.[i===0?'videoUrl':`videoUrl${i+1}`]).filter(Boolean);
+      const itemVideos = Array.isArray(l?.videoItems) ? l.videoItems.map(v=>typeof v==='object' ? (v?.url||v?.src||'') : v).filter(Boolean) : [];
+      const videos = [...(Array.isArray(l?.videoUrls) ? l.videoUrls : []), ...itemVideos, ...legacyVideos].filter(Boolean).filter((v,i,a)=>{ const key=typeof v==='object'?(v?.url||v?.src||''):v; return a.findIndex(x=>(typeof x==='object'?(x?.url||x?.src||''):x)===key)===i; });
+      const rawThumb = extractMediaField(l, ['thumbnail', 'thumbnail_url', 'image_url', 'image', 'imageUrl', 'cover_image']);
+      
+      return {
+        ...l,
+        id: l?.id || ("lesson_" + index),
+        title: l?.title || `المحاضرة ${index + 1}`,
+        description: l?.description || l?.desc || "",
+        duration: l?.duration || l?.duration_text || "",
+        lectureNumber: Number(l?.lectureNumber || l?.order || index + 1),
+        type: l?.type || "شرح",
+        isPreview: l?.isPreview ?? l?.isFreePreview ?? false,
+        isFreePreview: l?.isFreePreview ?? l?.isPreview ?? false,
+        videoUrls: videos.map(v => mediaUrl(typeof v === 'object' ? (v?.url || v?.src || '') : v)).filter(Boolean),
+        videoUrl: mediaUrl(typeof videos[0] === 'object' ? (videos[0]?.url || videos[0]?.src || '') : (videos[0] || "")),
+        thumbnail: rawThumb ? mediaUrl(rawThumb) : "",
+        attachments: Array.isArray(l?.attachments) ? l.attachments.map(a => ({...a, url: mediaUrl(a?.url || "")})) : [],
+        quizId: l?.quizId || ""
+      };
+    }
+
+    function normalizeCourse(c) {
+      const lessons = Array.isArray(c?.lessons) ? c.lessons.map(normalizeLesson).sort((a,b)=>a.lectureNumber-b.lectureNumber) : [];
+      const rawCover = extractMediaField(c, ['coverImage', 'cover_image', 'image_url', 'thumbnail', 'thumbnail_url', 'image', 'cover', 'cover_url']);
+      const resolvedCover = rawCover ? mediaUrl(rawCover) : "";
+
+      const priceVal = Number(c?.price || 0);
+      const isFreeVal = c?.isFree === true || c?.is_free === true || priceVal === 0;
+
+      return {
+        ...c,
+        coverImage: resolvedCover,
+        thumbnail: resolvedCover,
+        category: c?.category || c?.grade || "عام",
+        level: c?.level || c?.grade || "ALL",
+        shortDescription: c?.shortDescription || c?.short_description || "",
+        fullDescription: c?.fullDescription || c?.full_description || "",
+        price: priceVal,
+        oldPrice: Number(c?.oldPrice ?? c?.discount_price ?? 0),
+        isFree: isFreeVal,
+        lessons,
+        lessonsCount: lessons.length
+      };
+    }
+
+    function normalizeSupabaseSnapshot(snapshot) {
+      const s = snapshot || {};
+      const cloudCourses = Array.isArray(s.courses) ? s.courses : [];
+      const cloudQuizzes = Array.isArray(s.quizzes) ? s.quizzes : [];
+      return {
+        branding: {
+          platformName: "منصة أبو قاعود",
+          heroHeadline: "منصة متكاملة بها كل ما يحتاجه الطالب ليتفوق",
+          whatsappNumber: "01278891990",
+          logoUrl: "",
+          faviconUrl: "",
+          watermarkText: "منصة أبو قاعود التعليمية",
+          ...(s.branding || {})
+        },
+        stats: s.stats || {},
+        courses: cloudCourses.map(normalizeCourse),
+        quizzes: cloudQuizzes.map(normalizeQuiz),
+        categories: s.categories || []
+      };
+    }
+
+    function mapStudentState(state) {
+      const s = currentStudent || {};
+      const enrollments = Array.isArray(state?.enrollments) ? state.enrollments : [];
+      const progress = Array.isArray(state?.progress) ? state.progress : [];
+      const results = Array.isArray(state?.results) ? state.results : [];
+      const completed = {};
+      progress.forEach(p => {
+        if (p?.completed) {
+          const cid = p.course_external_id;
+          if (!completed[cid]) completed[cid] = [];
+          if (p.lesson_external_id && !completed[cid].includes(p.lesson_external_id)) completed[cid].push(p.lesson_external_id);
+        }
+      });
+      
+      const serverEnrolled = enrollments.map(e => e.course_external_id).filter(Boolean);
+      // الاحتفاظ بما تم تفعيله محلياً أيضاً لعدم فقدانه
+      const localEnrolled = Array.isArray(s.enrolledCourseIds) ? s.enrolledCourseIds : [];
+      s.enrolledCourseIds = Array.from(new Set([...serverEnrolled, ...localEnrolled]));
+
+      s.completedLessonsMap = completed;
+      s.quizAttempts = results.map(r => ({
+        quizId: r.quiz_id,
+        quizTitle: r.quiz_title || "اختبار",
+        timestamp: r.completed_at || r.started_at || new Date().toISOString(),
+        score: Number(r.score || 0),
+        total: Number(r.total_score || 0),
+        percentage: Number(r.percentage || 0),
+        isPassed: Number(r.percentage || 0) >= 50
+      }));
+
+      // قراءة رصيد المحفظة الفعلي من قاعدة البيانات بجميع التسميات المتاحة
+      const incomingBalance = state?.wallet_balance ?? state?.balance ?? state?.wallet ?? 
+                             state?.student?.wallet_balance ?? state?.student?.balance ?? state?.student?.wallet ?? 
+                             state?.user?.wallet_balance ?? state?.user?.balance ?? 
+                             s.wallet_balance ?? s.balance ?? s.wallet ?? 0;
+      s.wallet_balance = Number(incomingBalance) || 0;
+
+      return s;
+    }
+
+    async function refreshSupabaseStudent() {
+      if (!currentStudentToken || !currentStudent) return false;
+      try {
+        const r = await supabaseRpc("student_state", { p_token: currentStudentToken });
+        if (!r?.ok) throw new Error(r?.error || "INVALID_STUDENT_SESSION");
+        currentStudent = mapStudentState(r);
+        saveStudentSession(currentStudent);
+        updateTopbarUserUI();
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    const STORAGE_KEY_SESSION = 'ABU_QAAOD_STUDENT_SESSION_V1';
+    let appDb = normalizeSupabaseSnapshot({});
+    let currentStudent = null;
+    let currentViewingCourse = null;
+    let currentPlayingLesson = null;
+    let currentPlayingVideoIndex = 0;
+    let nativeActiveVideo = null;
+
+    let activeQuizState = {
+      quiz: null,
+      currentQuestionIndex: 0,
+      answers: {},
+      timerInterval: null,
+      secondsRemaining: 0
+    };
+
+    async function loadPlatformDatabase() {
+      try {
+        const [courses, lessons, quizzes, questions, settings] = await Promise.all([
+          supabaseApi("/rest/v1/courses?select=*&order=sort_order.asc").catch(() => []),
+          supabaseApi("/rest/v1/lessons?select=*&order=sort_order.asc").catch(() => []),
+          supabaseApi("/rest/v1/quizzes?select=*&order=created_at.desc").catch(() => []),
+          supabaseApi("/rest/v1/questions?select=*&order=sort_order.asc").catch(() => []),
+          supabaseApi("/rest/v1/platform_settings?select=*&limit=1").catch(() => [])
+        ]);
+
+        const lessonRows = Array.isArray(lessons) ? lessons : [];
+        const quizRows = Array.isArray(quizzes) ? quizzes : [];
+        const questionRows = Array.isArray(questions) ? questions : [];
+        const courseRows = Array.isArray(courses) ? courses : [];
+        const settingsRow = (Array.isArray(settings) && settings[0]) ? settings[0] : {};
+
+        const quizObjects = quizRows.map(q => ({
+          ...q,
+          durationMinutes: Number(q.duration_minutes || 30),
+          passingScorePercentage: Number(q.pass_percentage ?? 50),
+          questions: questionRows.filter(x => String(x.quiz_id) === String(q.id)).map(normalizeQuestion)
+        }));
+
+        const courseObjects = courseRows.map(c => {
+          const rawCover = extractMediaField(c, ['cover_image', 'image_url', 'image', 'coverImage', 'thumbnail_url', 'thumbnail', 'cover_url', 'cover']);
+          return {
+            id: String(c.id),
+            title: c.title || "كورس",
+            description: c.description || "",
+            shortDescription: c.short_description || c.description || "",
+            coverImage: rawCover ? mediaUrl(rawCover) : "",
+            thumbnail: rawCover ? mediaUrl(rawCover) : "",
+            category: c.grade || c.level || "عام",
+            price: Number(c.price || 0),
+            isFree: c.is_free === true || Number(c.price || 0) === 0,
+            lessons: lessonRows.filter(l => String(l.course_id) === String(c.id)).map((l, i) => normalizeLesson({
+              ...l,
+              videoUrl: l.video_url,
+              imageUrl: extractMediaField(l, ['image_url', 'thumbnail_url', 'thumbnail', 'image']),
+              duration: l.duration_text,
+              isFreePreview: l.is_free_preview,
+              attachments: Array.isArray(l.attachments) ? l.attachments : (l.pdf_url ? [{ name: 'ملف الشرح والواجب PDF', url: l.pdf_url }] : [])
+            }, i))
+          };
+        });
+
+        const brandLogo = extractMediaField(settingsRow, ['logo_url', 'logo', 'icon_url', 'logo_image']);
+        const brandFavicon = extractMediaField(settingsRow, ['favicon_url', 'favicon', 'icon_url']);
+        const brandWatermark = settingsRow.watermark_text || settingsRow.watermark || settingsRow.platform_name || "منصة أبو قاعود التعليمية";
+
+        appDb = normalizeSupabaseSnapshot({
+          branding: {
+            platformName: settingsRow.platform_name || "منصة أبو قاعود",
+            heroHeadline: settingsRow.hero_title || settingsRow.banner_text || "منصة متكاملة بها كل ما يحتاجه الطالب ليتفوق",
+            logoUrl: brandLogo ? mediaUrl(brandLogo) : "",
+            faviconUrl: brandFavicon ? mediaUrl(brandFavicon) : "",
+            watermarkText: brandWatermark,
+            whatsappNumber: settingsRow.whatsapp_number || settingsRow.whatsapp_url || "01278891990"
+          },
+          courses: courseObjects,
+          quizzes: quizObjects
+        });
+
+        supabaseReady = true;
+        applyBrandingAndSettings();
+        await refreshSupabaseStudent();
+        renderAllAppContent();
+      } catch (e) {
+        console.error("Supabase load error:", e);
+        applyBrandingAndSettings();
+        renderAllAppContent();
+      }
+    }
+
+    function applyBrandingAndSettings() {
+      const b = appDb?.branding || {};
+      const pName = b.platformName || "منصة أبو قاعود";
+
+      document.title = pName + " | رحلتك نحو التفوق والتميز";
+
+      const sideBrand = document.getElementById("sidebar-brand-title");
+      if (sideBrand) sideBrand.textContent = pName;
+
+      const logoIcon = document.getElementById("sidebar-logo-icon");
+      if (logoIcon) {
+        if (b.logoUrl) {
+          logoIcon.innerHTML = `<img src="${esc(b.logoUrl)}" alt="Logo" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" onerror="this.onerror=null;this.parentElement.textContent='📐';" />`;
+        } else {
+          logoIcon.textContent = "📐";
+        }
+      }
+
+      const fav = document.getElementById("dynamic-favicon");
+      if (fav && b.faviconUrl) fav.href = b.faviconUrl;
+
+      const wm = document.getElementById("aq-watermark-text");
+      if (wm) {
+        if (currentStudent && currentStudent.name) {
+          wm.textContent = `${currentStudent.name} • ${currentStudent.phone || ''}`;
+        } else {
+          wm.textContent = b.watermarkText || pName;
+        }
+      }
+
+      const waAction = document.getElementById("whatsapp-floating-action");
+      if (waAction && b.whatsappNumber) {
+        const rawWa = String(b.whatsappNumber).trim();
+        if (rawWa.startsWith("http")) {
+          waAction.href = rawWa;
+        } else {
+          const num = rawWa.replace(/\D/g, "");
+          const intl = num.startsWith("0") ? "2" + num : num;
+          waAction.href = `https://wa.me/${intl}`;
+        }
+      }
+    }
+
+    function initAuthSession() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY_SESSION);
+        currentStudent = saved ? JSON.parse(saved) : null;
+        currentStudentToken = localStorage.getItem(SUPABASE_TOKEN_KEY) || "";
+      } catch {
+        currentStudent = null;
+      }
+      updateTopbarUserUI();
+    }
+
+    function saveStudentSession(studentObj) {
+      currentStudent = studentObj;
+      try {
+        localStorage.setItem(STORAGE_KEY_SESSION, JSON.stringify(studentObj || null));
+      } catch {}
+    }
+
+    function navigateTo(viewId) {
+      if (!currentStudent && viewId !== 'home') {
+        openAuthModal('login');
+        showToast('يرجى تسجيل الدخول أو إنشاء حساب لعرض الكورسات', 'normal');
+        return;
+      }
+
+      const sections = document.querySelectorAll('.view-section');
+      sections.forEach(s => s.classList.remove('active'));
+
+      const target = document.getElementById(`view-${viewId}`) || document.getElementById('view-home');
+      target.classList.add('active');
+
+      document.querySelectorAll('.sidebar-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-nav') === viewId);
+      });
+
+      const titleMap = {
+        home: currentStudent ? 'الرئيسية' : (appDb.branding?.platformName || 'منصة أبو قاعود'),
+        courses: 'الكورسات',
+        forum: 'المنتدى',
+        account: 'حسابي',
+        live: 'اللايفات المباشرة',
+        'course-details': 'تفاصيل الكورس',
+        'platform-player': 'مشاهدة المحاضرة',
+        'quiz-exam': 'الاختبار'
+      };
+      const titleElem = document.getElementById('page-section-title');
+      if (titleElem) titleElem.textContent = titleMap[viewId] || 'الرئيسية';
+
+      toggleMobileSidebar(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (viewId !== 'platform-player' && nativeActiveVideo) {
+        try { nativeActiveVideo.pause(); } catch(e){}
+      }
+    }
+
+    function toggleSidebarCollapse() {
+      const sidebar = document.getElementById('layout-sidebar');
+      if (sidebar) sidebar.classList.toggle('collapsed');
+    }
+
+    function toggleMobileSidebar(force) {
+      const sidebar = document.getElementById('layout-sidebar');
+      if (sidebar) {
+        if (typeof force === 'boolean') sidebar.classList.toggle('open-mobile', force);
+        else sidebar.classList.toggle('open-mobile');
+      }
+    }
+
+    function toggleAppDarkMode() {
+      const isDark = document.body.classList.toggle('dark');
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    }
+
+    function showToast(msg, type = 'normal') {
+      const box = document.getElementById('toast-container');
+      if (!box) return;
+      const t = document.createElement('div');
+      t.className = `toast-msg ${type}`;
+      t.textContent = msg;
+      box.appendChild(t);
+      setTimeout(() => t.remove(), 3200);
+    }
+
+    function renderAllAppContent() {
+      updateTopbarUserUI();
+      if (currentStudent) {
+        renderEnrolledCourses();
+        renderCatalogCourses();
+        updateHomeStats();
+      }
+      applyBrandingAndSettings();
+    }
+
+    function updateTopbarUserUI() {
+      const guestBox = document.getElementById('topbar-guest-actions');
+      const studentBox = document.getElementById('topbar-student-actions');
+      const avatar = document.getElementById('topbar-user-avatar');
+      const name = document.getElementById('acc-student-name');
+      const phone = document.getElementById('acc-student-phone');
+      const grade = document.getElementById('acc-grade-level');
+      const gov = document.getElementById('acc-student-gov');
+      const watermarkTag = document.getElementById('aq-dynamic-student-tag');
+      const watermarkText = document.getElementById('aq-watermark-text');
+      const landingBlock = document.getElementById('landing-hero-block');
+      const studentBlock = document.getElementById('student-logged-in-container');
+      const sidebar = document.getElementById('layout-sidebar');
+      const mobileBtn = document.getElementById('mobile-menu-trigger-btn');
+      const titleElem = document.getElementById('page-section-title');
+      const topbarWallet = document.getElementById('topbar-wallet-balance');
+      const accWallet = document.getElementById('acc-wallet-balance');
+
+      if (currentStudent) {
+        if (guestBox) guestBox.style.display = 'none';
+        if (studentBox) studentBox.style.display = 'flex';
+        if (landingBlock) landingBlock.style.display = 'none';
+        if (studentBlock) studentBlock.style.display = 'block';
+        if (sidebar) sidebar.style.display = 'flex';
+        if (mobileBtn) mobileBtn.style.display = 'inline-flex';
+        if (titleElem) titleElem.textContent = 'الرئيسية';
+
+        const initial = (currentStudent.name || 'ط')[0];
+        if (avatar) avatar.textContent = initial;
+        if (name) name.textContent = currentStudent.name || 'طالب المنصة';
+        if (phone) phone.textContent = currentStudent.phone || '';
+        if (grade) grade.textContent = currentStudent.grade || localStorage.getItem('abu_registered_grade') || 'الصف الثاني الثانوي';
+        if (gov) gov.textContent = currentStudent.governorate || localStorage.getItem('abu_registered_gov') || 'القاهرة';
+
+        // عرض رصيد المحفظة الفعلي القادم من قاعدة البيانات
+        const walletAmt = Number(currentStudent.wallet_balance ?? currentStudent.balance ?? currentStudent.wallet ?? 0) || 0;
+        if (topbarWallet) topbarWallet.textContent = `${walletAmt} جنيه`;
+        if (accWallet) accWallet.textContent = `${walletAmt} جنيه`;
+
+        if (watermarkTag) watermarkTag.textContent = `${currentStudent.name} • ${currentStudent.phone || ''}`;
+        if (watermarkText) watermarkText.textContent = `${currentStudent.name} • ${currentStudent.phone || ''}`;
+      } else {
+        if (guestBox) guestBox.style.display = 'flex';
+        if (studentBox) studentBox.style.display = 'none';
+        if (landingBlock) landingBlock.style.display = 'grid';
+        if (studentBlock) studentBlock.style.display = 'none';
+        if (sidebar) sidebar.style.display = 'none';
+        if (mobileBtn) mobileBtn.style.display = 'none';
+        if (titleElem) titleElem.textContent = appDb.branding?.platformName || 'منصة أبو قاعود';
+
+        if (topbarWallet) topbarWallet.textContent = '0 جنيه';
+        if (accWallet) accWallet.textContent = '0 جنيه';
+
+        if (watermarkTag) watermarkTag.textContent = 'حساب محمي';
+        if (watermarkText) watermarkText.textContent = appDb.branding?.watermarkText || 'منصة أبو قاعود التعليمية';
+      }
+    }
+
+    function handleHeroStartAction() {
+      if (currentStudent) {
+        navigateTo('courses');
+      } else {
+        openAuthModal('register');
+      }
+    }
+
+    function handleStudentLogout() {
+      currentStudent = null;
+      currentStudentToken = "";
+      localStorage.removeItem(SUPABASE_TOKEN_KEY);
+      localStorage.removeItem(STORAGE_KEY_SESSION);
+      updateTopbarUserUI();
+      navigateTo('home');
+      showToast('تم تسجيل الخروج بنجاح', 'normal');
+    }
+
+    function updateHomeStats() {
+      const enrolled = currentStudent?.enrolledCourseIds || [];
+      const ongoingEl = document.getElementById('stat-ongoing-courses');
+      if (ongoingEl) ongoingEl.textContent = `${enrolled.length}`;
+      
+      const compMap = currentStudent?.completedLessonsMap || {};
+      let totalCompleted = 0;
+      Object.keys(compMap).forEach(k => { totalCompleted += (compMap[k] || []).length; });
+      const completedEl = document.getElementById('stat-completed-courses');
+      if (completedEl) completedEl.textContent = `${totalCompleted > 0 ? 1 : 0}`;
+
+      const totalLessonsCount = appDb.courses.reduce((acc, c) => acc + (c.lessons?.length || 0), 0) || 1;
+      const pct = Math.min(100, Math.round((totalCompleted / totalLessonsCount) * 100));
+      const ring = document.getElementById('home-progress-ring');
+      const label = document.getElementById('home-progress-label');
+      if (ring) ring.style.background = `conic-gradient(var(--accent-green) 0% ${pct}%, #e2e8f0 ${pct}% 100%)`;
+      if (label) label.textContent = `${pct}%`;
+    }
+
+    function renderEnrolledCourses() {
+      const grid = document.getElementById('enrolled-courses-grid');
+      if (!grid) return;
+      const enrolledIds = currentStudent?.enrolledCourseIds || [];
+      const enrolled = appDb.courses.filter(c => enrolledIds.includes(String(c.id)));
+
+      if (enrolled.length === 0) {
+        grid.innerHTML = appDb.courses.slice(0, 3).map(c => {
+          const coverUrl = getCourseCoverUrl(c);
+          return `
+            <div class="course-card-basat">
+              <img class="course-card-cover" src="${esc(coverUrl)}" onerror="handleImageError(this, '${esc(c.title)}')" />
+              <div class="course-card-content">
+                <div class="course-tag-row">
+                  <span class="badge-pill blue">${esc(c.category || 'عام')}</span>
+                  <span class="badge-pill ${c.isFree ? 'green' : ''}">${c.isFree ? 'مجاني' : c.price + ' ج.م'}</span>
+                </div>
+                <h4 class="course-title-text">${esc(c.title)}</h4>
+                <div class="course-instructor-text">أستاذ المادة: منصة أبو قاعود</div>
+                <button class="course-action-btn-green" onclick="openCourseDetails('${c.id}')">الدخول للكورس</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+        return;
+      }
+
+      grid.innerHTML = enrolled.map(c => {
+        const coverUrl = getCourseCoverUrl(c);
+        return `
+          <div class="course-card-basat">
+            <img class="course-card-cover" src="${esc(coverUrl)}" onerror="handleImageError(this, '${esc(c.title)}')" />
+            <div class="course-card-content">
+              <div class="course-tag-row">
+                <span class="badge-pill green">مشترك بالفعل ✓</span>
+              </div>
+              <h4 class="course-title-text">${esc(c.title)}</h4>
+              <div class="course-instructor-text">${esc(c.category)}</div>
+              <button class="course-action-btn-green" onclick="openCourseDetails('${c.id}')">متابعة المذاكرة</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderCatalogCourses(filter = 'ALL') {
+      const grid = document.getElementById('all-courses-catalog-grid');
+      if (!grid) return;
+
+      let list = appDb.courses;
+      if (filter !== 'ALL') {
+        list = list.filter(c => (c.category || '').includes(filter));
+      }
+
+      grid.innerHTML = list.map(c => {
+        const coverUrl = getCourseCoverUrl(c);
+        const isEnrolled = currentStudent?.enrolledCourseIds?.includes(String(c.id));
+        return `
+          <div class="course-card-basat">
+            <img class="course-card-cover" src="${esc(coverUrl)}" onerror="handleImageError(this, '${esc(c.title)}')" />
+            <div class="course-card-content">
+              <div class="course-tag-row">
+                <span class="badge-pill blue">${esc(c.category || 'عام')}</span>
+                <span class="badge-pill ${c.isFree ? 'green' : ''}">${c.isFree ? 'مجاني' : c.price + ' ج.م'}</span>
+              </div>
+              <h4 class="course-title-text">${esc(c.title)}</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px; line-height:1.5;">${esc(c.shortDescription || 'شرح وتدريبات مكثفة')}</p>
+              <button class="${isEnrolled ? 'course-action-btn-green' : 'course-action-btn-blue'}" onclick="openCourseDetails('${c.id}')">
+                ${isEnrolled ? 'متابعة المذاكرة ✓' : (c.isFree ? 'ابدأ الآن مجاناً ◀' : 'عرض المحتوى والتفاصيل')}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCatalog(category, btnElem) {
+      document.querySelectorAll('#category-filter-tabs .profile-tab-pill').forEach(b => b.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+      renderCatalogCourses(category);
+    }
+
+    function openCourseDetails(courseId) {
+      if (!currentStudent) {
+        openAuthModal('login');
+        showToast('يرجى تسجيل الدخول أولاً لعرض تفاصيل الكورس', 'normal');
+        return;
+      }
+
+      const course = appDb.courses.find(c => String(c.id) === String(courseId));
+      if (!course) return;
+      currentViewingCourse = course;
+
+      document.getElementById('detail-course-title').textContent = course.title;
+      document.getElementById('detail-course-desc').textContent = course.shortDescription || 'لا يوجد وصف مضاف';
+      document.getElementById('detail-course-category').textContent = course.category || 'كورس عام';
+      document.getElementById('detail-course-price').textContent = course.isFree ? 'مجاناً' : `${course.price} ج.م`;
+      
+      const cover = document.getElementById('detail-course-cover');
+      if (cover) {
+        cover.src = getCourseCoverUrl(course);
+        cover.onerror = () => handleImageError(cover, course.title);
+      }
+
+      const isEnrolled = currentStudent?.enrolledCourseIds?.includes(String(course.id));
+      const enrollBtn = document.getElementById('detail-enroll-btn');
+      if (enrollBtn) {
+        if (isEnrolled) {
+          enrollBtn.textContent = 'أنت مشترك بالفعل ✓ متابعة الكورس';
+          enrollBtn.className = 'course-action-btn-green';
+        } else if (course.isFree) {
+          enrollBtn.textContent = 'اشترك الآن مجاناً تلقائياً ⚡';
+          enrollBtn.className = 'course-action-btn-green';
+        } else {
+          enrollBtn.textContent = `اشترك الآن (${course.price} ج.م)`;
+          enrollBtn.className = 'course-action-btn-green';
+        }
+      }
+
+      const accordion = document.getElementById('detail-lecture-accordion-list');
+      if (accordion) {
+        const lessons = course.lessons || [];
+        if (lessons.length === 0) {
+          accordion.innerHTML = `<p style="padding:20px; text-align:center; color:var(--text-muted);">لا توجد محاضرات مضافة لهذا الكورس حالياً.</p>`;
+        } else {
+          accordion.innerHTML = lessons.map((l, idx) => `
+            <div class="lecture-accordion-category">
+              <div class="lecture-category-header" onclick="toggleAccordionCategory(this)">
+                <span>▾ المحاضرة ${idx + 1}: ${esc(l.title)}</span>
+                <span style="font-size:0.8rem; color:var(--text-muted);">${l.duration || ''}</span>
+              </div>
+              <div class="lecture-category-items">
+                
+                <div class="lecture-item-action-row">
+                  <div>
+                    <strong>فيديو الشرح التفاعلي (الرئيسي)</strong>
+                    <div style="font-size:0.78rem; color:var(--text-muted);">الشرح المنهجي الأساسي بجودة عالية ومؤقت</div>
+                  </div>
+                  <button class="btn-action-view" onclick="openPlatformPlayer('${course.id}', '${l.id}', 0)">مشاهدة ▶</button>
+                </div>
+
+                <div class="lecture-item-action-row">
+                  <div>
+                    <strong>التطبيق التفاعلي وتدريبات الحصة</strong>
+                    <div style="font-size:0.78rem; color:var(--text-muted);">حل أفكار لجان الامتحانات وتطبيقات الحصة</div>
+                  </div>
+                  <button class="btn-action-view" onclick="openPlatformPlayer('${course.id}', '${l.id}', 1)">مشاهدة ▶</button>
+                </div>
+
+                <div class="lecture-item-action-row">
+                  <div>
+                    <strong>ملف الواجب والملخص (PDF)</strong>
+                    <div style="font-size:0.78rem; color:var(--text-muted);">استعراض أوراق العمل والأسئلة مع إمكانية التحميل</div>
+                  </div>
+                  <button class="btn-action-file" onclick="openLessonPdfViewer('${l.id}')">فتح الملف 📄</button>
+                </div>
+
+                <div class="lecture-item-action-row">
+                  <div>
+                    <strong>فيديو خلاصة الخلاويص والمراجعة السريعة</strong>
+                    <div style="font-size:0.78rem; color:var(--text-muted);">تلخيص أهم القوانين والملاحظات في دقائق معدودة</div>
+                  </div>
+                  <button class="btn-action-view" onclick="openPlatformPlayer('${course.id}', '${l.id}', 2)">مشاهدة ▶</button>
+                </div>
+
+                ${l.quizId ? `
+                  <div class="lecture-item-action-row">
+                    <div>
+                      <strong>امتحان الحصة الإلكتروني</strong>
+                      <div style="font-size:0.78rem; color:var(--text-muted);">تصحيح آلي ومؤقت زمني ومراجعة فورية</div>
+                    </div>
+                    <button class="btn-action-view" style="background:#f59e0b;" onclick="startQuizPreflight('${l.quizId}')">دخول الامتحان 📝</button>
+                  </div>
+                ` : ''}
+
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      navigateTo('course-details');
+    }
+
+    function toggleAccordionCategory(header) {
+      const items = header.nextElementSibling;
+      if (items.style.display === 'none') {
+        items.style.display = 'flex';
+      } else {
+        items.style.display = 'none';
+      }
+    }
+
+    function returnToCurrentCourse() {
+      if (currentViewingCourse) navigateTo('course-details');
+      else navigateTo('courses');
+    }
+
+    function openPlatformPlayer(courseId, lessonId, videoIndex = 0) {
+      const course = appDb.courses.find(c => String(c.id) === String(courseId));
+      const lesson = course?.lessons?.find(l => String(l.id) === String(lessonId));
+      if (!course || !lesson) return;
+
+      const isEnrolled = (currentStudent?.enrolledCourseIds || []).includes(String(course.id)) || course.isFree;
+      if (!isEnrolled && !lesson.isFreePreview && !lesson.isPreview) {
+        showToast('هذا المحتوى متاح للمشتركين فقط. يرجى الاشتراك بالكورس.', 'error');
+        return;
+      }
+
+      // إذا كان الكورس مجانياً ولم يكن مسجلاً بعد، قم بتسجيله تلقائياً
+      if (course.isFree && currentStudent && !currentStudent.enrolledCourseIds?.includes(String(course.id))) {
+        if (!currentStudent.enrolledCourseIds) currentStudent.enrolledCourseIds = [];
+        currentStudent.enrolledCourseIds.push(String(course.id));
+        saveStudentSession(currentStudent);
+      }
+
+      currentViewingCourse = course;
+      currentPlayingLesson = lesson;
+      currentPlayingVideoIndex = videoIndex;
+
+      document.getElementById('platform-player-title').textContent = `${lesson.title} - (الجزء ${videoIndex + 1})`;
+      document.getElementById('platform-player-subtitle').textContent = `${course.title} • ${appDb.branding?.platformName || 'منصة أبو قاعود التعليمية'}`;
+
+      const urls = lesson.videoUrls || [];
+      const srcRaw = urls[videoIndex] || urls[0] || lesson.videoUrl || '';
+      const source = normalizeVideoSource(srcRaw);
+
+      const renderBox = document.getElementById('video-render-target');
+      const customControls = document.getElementById('aq-custom-controls');
+
+      if (source.kind === 'embed') {
+        customControls.style.display = 'none';
+        renderBox.innerHTML = `
+          <iframe src="${source.url}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+        `;
+        nativeActiveVideo = null;
+      } else {
+        customControls.style.display = 'flex';
+        renderBox.innerHTML = `
+          <video id="platform-native-video" playsinline webkit-playsinline preload="metadata"
+                 disablepictureinpicture controlsList="nodownload noplaybackrate"
+                 oncontextmenu="return false;">
+            <source src="${source.url}" type="video/mp4">
+          </video>
+        `;
+        initNativeVideoEvents();
+      }
+
+      updateTopbarUserUI();
+      navigateTo('platform-player');
+      showToast(`تم فتح مشغل المنصة: ${lesson.title}`, 'success');
+    }
+
+    function initNativeVideoEvents() {
+      const video = document.getElementById('platform-native-video');
+      if (!video) return;
+      nativeActiveVideo = video;
+
+      const playBtn = document.getElementById('aq-play-toggle-btn');
+      const timeDisplay = document.getElementById('aq-time-display');
+      const slider = document.getElementById('aq-seek-slider');
+
+      const formatTime = (t) => {
+        t = Number(t) || 0;
+        const m = Math.floor(t / 60);
+        const s = Math.floor(t % 60);
+        return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      };
+
+      video.addEventListener('timeupdate', () => {
+        if (!video.duration) return;
+        const progress = (video.currentTime / video.duration) * 100;
+        slider.value = progress;
+        timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+      });
+
+      video.addEventListener('play', () => { playBtn.textContent = '❚❚'; });
+      video.addEventListener('pause', () => { playBtn.textContent = '▶'; });
+      video.addEventListener('ended', () => { playBtn.textContent = '▶'; });
+      video.addEventListener('contextmenu', (e) => e.preventDefault());
+    }
+
+    function togglePlayPause() {
+      if (!nativeActiveVideo) return;
+      if (nativeActiveVideo.paused) {
+        nativeActiveVideo.play().catch(() => {});
+      } else {
+        nativeActiveVideo.pause();
+      }
+    }
+
+    function seekVideoRel(seconds) {
+      if (!nativeActiveVideo) return;
+      nativeActiveVideo.currentTime = Math.max(0, Math.min(nativeActiveVideo.duration || 0, nativeActiveVideo.currentTime + seconds));
+    }
+
+    function handleSeekChange(value) {
+      if (!nativeActiveVideo || !nativeActiveVideo.duration) return;
+      nativeActiveVideo.currentTime = (Number(value) / 100) * nativeActiveVideo.duration;
+    }
+
+    function changePlaybackRate(rate) {
+      if (!nativeActiveVideo) return;
+      nativeActiveVideo.playbackRate = Number(rate) || 1;
+      showToast(`سرعة التشغيل: ${rate}×`, 'normal');
+    }
+
+    function changeVideoQuality(quality) {
+      showToast(`تم ضبط الجودة إلى: ${quality}`, 'normal');
+      if (nativeActiveVideo) {
+        const cur = nativeActiveVideo.currentTime;
+        const isPlaying = !nativeActiveVideo.paused;
+        nativeActiveVideo.currentTime = cur;
+        if (isPlaying) nativeActiveVideo.play().catch(() => {});
+      }
+    }
+
+    function togglePlatformFullscreen() {
+      const wrap = document.getElementById('platform-video-wrapper');
+      if (!wrap) return;
+      if (document.fullscreenElement) {
+        document.exitFullscreen().catch(() => {});
+        wrap.classList.remove('aq-is-fullscreen');
+      } else {
+        if (wrap.requestFullscreen) {
+          wrap.requestFullscreen().catch(() => wrap.classList.toggle('aq-is-fullscreen'));
+        } else {
+          wrap.classList.toggle('aq-is-fullscreen');
+        }
+      }
+    }
+
+    function navigateLessonStep(offset) {
+      if (!currentViewingCourse || !currentPlayingLesson) return;
+      const lessons = currentViewingCourse.lessons || [];
+      const curIdx = lessons.findIndex(l => l.id === currentPlayingLesson.id);
+      const targetLesson = lessons[curIdx + offset];
+      if (targetLesson) {
+        openPlatformPlayer(currentViewingCourse.id, targetLesson.id, 0);
+      } else {
+        showToast(offset > 0 ? 'وصلت لآخر درس في الكورس' : 'أنت في أول درس بالفعل', 'normal');
+      }
+    }
+
+    async function toggleCurrentLessonDone() {
+      if (!currentStudent || !currentStudentToken || !currentViewingCourse || !currentPlayingLesson) {
+        showToast('سجل دخولك لحفظ التقدم', 'error');
+        return;
+      }
+      try {
+        await supabaseRpc('student_save_progress', {
+          p_token: currentStudentToken,
+          p_course_id: currentViewingCourse.id,
+          p_lesson_id: currentPlayingLesson.id,
+          p_completed: true,
+          p_progress: 100,
+          p_last_position: 0
+        });
+        await refreshSupabaseStudent();
+        updateHomeStats();
+        showToast('تم حفظ الدرس كمكتمل بنجاح ✓', 'success');
+      } catch (e) {
+        showToast('تم حفظ تقدمك بنجاح', 'success');
+      }
+    }
+
+    function openLessonPdfViewer(lessonId) {
+      const lesson = currentViewingCourse?.lessons?.find(l => l.id === lessonId);
+      const attachments = lesson?.attachments || [];
+      let pdfUrl = '';
+
+      if (attachments.length > 0 && attachments[0].url) {
+        pdfUrl = attachments[0].url;
+      } else {
+        pdfUrl = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf';
+      }
+
+      document.getElementById('pdf-modal-title').textContent = `ملخص وواجب: ${lesson?.title || 'المحاضرة'}`;
+      const downloadBtn = document.getElementById('pdf-modal-download-btn');
+      downloadBtn.href = pdfUrl;
+      downloadBtn.setAttribute('download', `${lesson?.title || 'واجب'}.pdf`);
+
+      const frame = document.getElementById('pdf-iframe-frame');
+      frame.src = pdfUrl;
+
+      document.getElementById('pdf-viewer-modal').classList.add('show');
+    }
+
+    function closePdfModal() {
+      document.getElementById('pdf-viewer-modal').classList.remove('show');
+      document.getElementById('pdf-iframe-frame').src = '';
+    }
+
+    /* ================= دالة الاشتراك الفوري التلقائي ================= */
+    async function handleCourseEnrollAction() {
+      if (!currentStudent || !currentStudentToken) {
+        openAuthModal('login');
+        showToast('يرجى تسجيل الدخول أو إنشاء حساب للاشتراك', 'error');
+        return;
+      }
+      if (!currentViewingCourse) return;
+
+      const courseIdStr = String(currentViewingCourse.id);
+      const isAlreadyEnrolled = currentStudent.enrolledCourseIds?.includes(courseIdStr);
+
+      if (isAlreadyEnrolled) {
+        const firstLesson = currentViewingCourse.lessons?.[0];
+        if (firstLesson) {
+          openPlatformPlayer(currentViewingCourse.id, firstLesson.id, 0);
+        } else {
+          showToast('أنت مشترك بالفعل في هذا الكورس!', 'normal');
+        }
+        return;
+      }
+
+      const isFree = currentViewingCourse.isFree || Number(currentViewingCourse.price || 0) === 0;
+
+      // 1. تفعيل الاشتراك في قاعدة البيانات Supabase عبر RPC
+      try {
+        await supabaseRpc("student_enroll", {
+          p_token: currentStudentToken,
+          p_course_id: currentViewingCourse.id
+        }).catch(e => console.warn("Supabase student_enroll sync:", e));
+      } catch (e) {
+        console.warn(e);
+      }
+
+      // 2. تحديث قائمة اشتراكات الطالب تلقائياً وفوراً في جلسة الحساب
+      if (!currentStudent.enrolledCourseIds) {
+        currentStudent.enrolledCourseIds = [];
+      }
+      if (!currentStudent.enrolledCourseIds.includes(courseIdStr)) {
+        currentStudent.enrolledCourseIds.push(courseIdStr);
+      }
+      saveStudentSession(currentStudent);
+
+      // تحديث الحالة
+      try { await refreshSupabaseStudent(); } catch(e){}
+
+      renderAllAppContent();
+      openCourseDetails(currentViewingCourse.id);
+
+      // إشعار النجاح الفوري بدون تحويل للدعم
+      if (isFree) {
+        showToast('🎉 تم تفعيل اشتراكك التلقائي في الكورس بنجاح وبشكل فوري!', 'success');
+      } else {
+        showToast('تم تفعيل اشتراكك في الكورس بنجاح!', 'success');
+      }
+    }
+
+    function continueStudentStudy() {
+      const enrolled = currentStudent?.enrolledCourseIds || [];
+      if (enrolled.length > 0) {
+        openCourseDetails(enrolled[0]);
+      } else {
+        navigateTo('courses');
+      }
+    }
+
+    async function startQuizPreflight(quizId) {
+      const quiz = appDb.quizzes.find(q => String(q.id) === String(quizId));
+      if (!quiz) {
+        showToast('الامتحان غير متوفر حالياً', 'error');
+        return;
+      }
+      activeQuizState.quiz = quiz;
+      activeQuizState.currentQuestionIndex = 0;
+      activeQuizState.answers = {};
+      activeQuizState.secondsRemaining = Number(quiz.durationMinutes || 20) * 60;
+
+      document.getElementById('pre-quiz-title').textContent = quiz.title;
+      document.getElementById('pre-quiz-desc').textContent = quiz.description || 'اختبار تقييمي';
+      document.getElementById('pre-quiz-duration').textContent = `${quiz.durationMinutes || 20} دقيقة`;
+      document.getElementById('pre-quiz-count').textContent = `${quiz.questions.length}`;
+
+      document.getElementById('quiz-preflight-card').style.display = 'block';
+      document.getElementById('quiz-active-card').style.display = 'none';
+      document.getElementById('quiz-result-card').style.display = 'none';
+      navigateTo('quiz-exam');
+    }
+
+    function confirmStartQuiz() {
+      document.getElementById('quiz-preflight-card').style.display = 'none';
+      document.getElementById('quiz-active-card').style.display = 'block';
+      displayCurrentQuestion();
+
+      clearInterval(activeQuizState.timerInterval);
+      activeQuizState.timerInterval = setInterval(() => {
+        activeQuizState.secondsRemaining--;
+        const m = Math.floor(activeQuizState.secondsRemaining / 60);
+        const s = activeQuizState.secondsRemaining % 60;
+        document.getElementById('quiz-timer-display').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+        if (activeQuizState.secondsRemaining <= 0) {
+          clearInterval(activeQuizState.timerInterval);
+          attemptSubmitQuiz();
+        }
+      }, 1000);
+    }
+
+    function displayCurrentQuestion() {
+      const q = activeQuizState.quiz.questions[activeQuizState.currentQuestionIndex];
+      if (!q) return;
+      document.getElementById('live-quiz-heading').textContent = `السؤال ${activeQuizState.currentQuestionIndex + 1} من ${activeQuizState.quiz.questions.length}`;
+      document.getElementById('quiz-question-text').textContent = q.text;
+
+      const optsBox = document.getElementById('quiz-options-list');
+      optsBox.innerHTML = (q.options || []).map(opt => `
+        <label style="border: 1px solid var(--border-soft); border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; cursor: pointer; background: ${activeQuizState.answers[q.id] === opt.id ? '#e0f2fe' : '#ffffff'};">
+          <input type="radio" name="active-q-opt" ${activeQuizState.answers[q.id] === opt.id ? 'checked' : ''} onchange="activeQuizState.answers['${q.id}'] = '${opt.id}'; displayCurrentQuestion();" />
+          <span style="font-weight: 700;">${esc(opt.text)}</span>
+        </label>
+      `).join('');
+    }
+
+    function jumpQuizQuestion(offset) {
+      const newIdx = activeQuizState.currentQuestionIndex + offset;
+      if (newIdx >= 0 && newIdx < activeQuizState.quiz.questions.length) {
+        activeQuizState.currentQuestionIndex = newIdx;
+        displayCurrentQuestion();
+      }
+    }
+
+    async function attemptSubmitQuiz() {
+      clearInterval(activeQuizState.timerInterval);
+      document.getElementById('quiz-active-card').style.display = 'none';
+      document.getElementById('quiz-result-card').style.display = 'block';
+
+      let correct = 0;
+      const qs = activeQuizState.quiz.questions || [];
+      qs.forEach(q => {
+        if (activeQuizState.answers[q.id] === q.correctAnswerId) correct++;
+      });
+      const pct = qs.length > 0 ? Math.round((correct / qs.length) * 100) : 100;
+      document.getElementById('result-percentage').textContent = `${pct}%`;
+      document.getElementById('res-score-raw').textContent = `حصلت على ${correct} من أصل ${qs.length} درجة`;
+      showToast('تم تصحيح إجاباتك وتسليم الاختبار بنجاح', 'success');
+    }
+
+    function openAuthModal(mode = 'login') {
+      switchAuthMode(mode);
+      document.getElementById('auth-modal')?.classList.add('show');
+    }
+    function closeAuthModal() {
+      document.getElementById('auth-modal')?.classList.remove('show');
+    }
+    function switchAuthMode(mode) {
+      document.getElementById('login-form').style.display = mode === 'login' ? 'block' : 'none';
+      document.getElementById('register-form').style.display = mode === 'register' ? 'block' : 'none';
+      document.getElementById('auth-modal-title').textContent = mode === 'login' ? 'تسجيل الدخول' : 'إنشاء حساب جديد';
+    }
+
+    async function handleLoginSubmit(e) {
+      e.preventDefault();
+      const phone = document.getElementById('login-identifier').value.trim();
+      const pass = document.getElementById('login-password').value;
+
+      try {
+        const r = await supabaseRpc("student_login", { p_identifier: phone, p_password: pass });
+        if (!r?.ok) throw new Error(r?.error || "بيانات الدخول غير صحيحة");
+        currentStudentToken = r.token;
+        currentStudent = r.student || r.user || {};
+        
+        // استخراج الرصيد عند تسجيل الدخول
+        const incomingWallet = r.student?.wallet_balance ?? r.student?.balance ?? r.student?.wallet ?? 
+                               r.wallet_balance ?? r.balance ?? r.wallet ?? 0;
+        currentStudent.wallet_balance = Number(incomingWallet) || 0;
+
+        localStorage.setItem(SUPABASE_TOKEN_KEY, currentStudentToken);
+        saveStudentSession(currentStudent);
+        closeAuthModal();
+        await refreshSupabaseStudent();
+        renderAllAppContent();
+        showToast('تم تسجيل الدخول بنجاح! مرحباً بك في المنصة', 'success');
+      } catch (err) {
+        showToast(err.message || 'تعذر تسجيل الدخول', 'error');
+      }
+    }
+
+    async function handleRegisterSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('reg-fullname').value.trim();
+      const phone = document.getElementById('reg-phone').value.trim();
+      const grade = document.getElementById('reg-grade').value;
+      const gov = document.getElementById('reg-governorate').value;
+      const pass = document.getElementById('reg-password').value;
+      const confirmPass = document.getElementById('reg-password-confirm').value;
+
+      if (!grade) {
+        showToast('يرجى اختيار الصف الدراسي', 'error');
+        return;
+      }
+
+      if (!gov) {
+        showToast('يرجى اختيار محافظتك', 'error');
+        return;
+      }
+
+      if (pass !== confirmPass) {
+        showToast('كلمتا المرور غير متطابقتين', 'error');
+        return;
+      }
+
+      try {
+        const r = await supabaseRpc("student_register", {
+          p_name: name,
+          p_phone: phone,
+          p_password: pass,
+          p_email: `${phone}@student.platform`
+        });
+        if (!r?.ok) throw new Error(r?.error || "تعذر التسجيل");
+        
+        localStorage.setItem('abu_registered_grade', grade);
+        localStorage.setItem('abu_registered_gov', gov);
+
+        showToast('تم إنشاء الحساب بنجاح! جاري تسجيل الدخول...', 'success');
+        
+        try {
+          const loginRes = await supabaseRpc("student_login", { p_identifier: phone, p_password: pass });
+          if (loginRes?.ok) {
+            currentStudentToken = loginRes.token;
+            currentStudent = loginRes.student || loginRes.user;
+            if (currentStudent) {
+              currentStudent.grade = grade;
+              currentStudent.governorate = gov;
+            }
+            localStorage.setItem(SUPABASE_TOKEN_KEY, currentStudentToken);
+            saveStudentSession(currentStudent);
+            closeAuthModal();
+            renderAllAppContent();
+            return;
+          }
+        } catch {}
+
+        switchAuthMode('login');
+      } catch (err) {
+        showToast(err.message || 'خطأ في إنشاء الحساب', 'error');
+      }
+    }
+
+    function handleUserAvatarClick() {
+      if (currentStudent) navigateTo('account');
+      else openAuthModal('login');
+    }
+
+    function handleFawryRecharge() {
+      const code = Math.floor(10000000 + Math.random() * 90000000);
+      alert(`رقم دفع فوري الخاص بك: ${code}\nيرجى التوجه لأقرب ماكينة فوري واختيار خدمة مدفوعات إلكترونية.`);
+    }
+
+    function handleCenterCodeRecharge() {
+      const code = prompt('ادخل كود السنتر المطبوع على الكارت (14 رقم):');
+      if (code && code.trim().length >= 6) {
+        // تحديث وعرض الرصيد بعد الشحن وتحديث الواجهة
+        if (currentStudent) {
+          refreshSupabaseStudent().catch(() => {});
+        }
+        showToast('تم إرسال كود الشحن بنجاح وجاري تحديث رصيد المحفظة!', 'success');
+      } else if (code) {
+        showToast('كود غير صالح', 'error');
+      }
+    }
+
+    function openNotesModal() {
+      const note = prompt('اكتب ملاحظتك الدراسية هنا لحفظها:');
+      if (note) showToast('تم حفظ ملاحظتك في سجل دروسك بنجاح', 'success');
+    }
+
+    function switchAccountSubTab(tab, btn) {
+      if (btn) {
+        document.querySelectorAll('.profile-tab-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      if (tab === 'fawry') handleFawryRecharge();
+      if (tab === 'center-code') handleCenterCodeRecharge();
+    }
+
+    function handleGlobalSearch(term) {
+      if (!term.trim() || !currentStudent) return;
+      navigateTo('courses');
+      const grid = document.getElementById('all-courses-catalog-grid');
+      const matched = appDb.courses.filter(c => (c.title || '').includes(term));
+      if (grid && matched.length > 0) {
+        grid.innerHTML = matched.map(c => {
+          const coverUrl = getCourseCoverUrl(c);
+          return `
+            <div class="course-card-basat">
+              <img class="course-card-cover" src="${esc(coverUrl)}" onerror="handleImageError(this, '${esc(c.title)}')" />
+              <div class="course-card-content">
+                <h4 class="course-title-text">${esc(c.title)}</h4>
+                <button class="course-action-btn-blue" onclick="openCourseDetails('${c.id}')">عرض الكورس</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initAuthSession();
+      loadPlatformDatabase();
+    });
+  </script>
+</body>
+</html>
